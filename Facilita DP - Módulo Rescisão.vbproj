@@ -134,6 +134,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_FacilitaDP.ico" />
+    <None Include="Resources\icn_Adicionar.png" />
+    <None Include="Resources\icn_Excluir.png" />
+    <None Include="Resources\icn_Editar.png" />
+    <None Include="Resources\Icn_Visualizar.png" />
+    <None Include="Resources\icn_Exame.png" />
+    <None Include="Resources\icn_Enviar.png" />
+    <None Include="Resources\icn_Rescisao.png" />
+    <None Include="Resources\icn_Colaboradores.png" />
+    <None Include="Resources\icn_UnidadesSenac.png" />
+    <None Include="Resources\icn_ClinicasAutorizadas.png" />
+    <None Include="Resources\icn_Emitir.png" />
+    <None Include="Resources\icn_ExameMedico.png" />
+    <None Include="Resources\icn_Sobre.png" />
+    <None Include="Resources\icn_Sair.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\banner_FacilitaDP.png" />
