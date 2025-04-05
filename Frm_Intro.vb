@@ -11,8 +11,8 @@
 
         If Tmr_Intro.Interval = 3000 Then
 
-            'Dim Frm As New Frm_Principal
-            'Frm.show()
+            Dim Frm As New Frm_Principal
+            Frm.Show()
 
             Tmr_Intro.Stop()
 

@@ -23,6 +23,7 @@ Partial Class Frm_Intro
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Intro))
         Me.Lbl_Versao = New System.Windows.Forms.Label()
         Me.Lbl_Modulo = New System.Windows.Forms.Label()
         Me.Tmr_Intro = New System.Windows.Forms.Timer(Me.components)
@@ -70,6 +71,7 @@ Partial Class Frm_Intro
         Me.Controls.Add(Me.Lbl_Versao)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_Intro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
