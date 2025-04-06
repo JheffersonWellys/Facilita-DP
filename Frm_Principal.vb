@@ -41,6 +41,11 @@
 
     Private Sub TlStrpMnItm_Colaboradores_Adicionar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_Colaboradores_Adicionar.Click
 
+        Dim Frm As New Frm_Cadastro_Colaborador
+        Frm.AtivarModoFormulario(Modo_Cadastro)
+        Frm.Informar_Colaborador()
+        Frm.ShowDialog()
+
     End Sub
 
     Private Sub TlStrpMnItm_Colaboradores_Editar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_Colaboradores_Editar.Click

@@ -82,6 +82,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clss_Tabelas.vb" />
+    <Compile Include="Frm_Cadastro_Colaborador.Designer.vb">
+      <DependentUpon>Frm_Cadastro_Colaborador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Cadastro_Colaborador.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Intro.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -95,8 +101,10 @@
     <Compile Include="Frm_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Md_Funcoes_Auxiliares.vb" />
     <Compile Include="Md_SQLite.vb" />
     <Compile Include="Md_SQLite_Funcoes.vb" />
+    <Compile Include="Md_VariaveisGlobais.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -115,6 +123,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_Cadastro_Colaborador.resx">
+      <DependentUpon>Frm_Cadastro_Colaborador.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Intro.resx">
       <DependentUpon>Frm_Intro.vb</DependentUpon>
     </EmbeddedResource>

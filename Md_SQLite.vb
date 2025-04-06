@@ -4,8 +4,6 @@ Imports System.Windows.Forms
 
 Module Md_SQLite
 
-    Private ReadOnly dbPath As String = Application.StartupPath & "\" & My.Settings.App_Nome & ".db"
-
     Public Sub InicializarBandoDeDados()
 
         Call VerificarOuCriarBanco()
@@ -38,15 +36,19 @@ Module Md_SQLite
                     CREATE TABLE IF NOT EXISTS colaborador (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         nome_completo TEXT,
+                        chapa TEXT,
                         email_pessoal TEXT,
                         email_corporativo TEXT,
                         telefone_pessoal TEXT,
                         cpf TEXT,
                         rg TEXT,
+                        data_admissao TEXT,
                         data_nascimento TEXT,
                         data_demissao TEXT,
                         funcao TEXT,
                         setor TEXT,
+                        sexo TEXT,
+                        demitido INTEGER DEFAULT 0,
                         status TEXT
                     );
 

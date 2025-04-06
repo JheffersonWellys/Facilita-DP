@@ -3,15 +3,19 @@
     Public Class Colaborador
         Public Property Id As Integer
         Public Property NomeCompleto As String
+        Public Property Chapa As String
         Public Property EmailPessoal As String
         Public Property EmailCorporativo As String
         Public Property TelefonePessoal As String
         Public Property CPF As String
         Public Property RG As String
+        Public Property DataAdmissao As Date
         Public Property DataNascimento As Date
-        Public Property DataDemissao As Date?
+        Public Property DataDemissao As Date
         Public Property Funcao As String
         Public Property Setor As String
+        Public Property Sexo As String
+        Public Property Demitido As Boolean
         Public Property Status As String
     End Class
 
