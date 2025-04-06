@@ -82,6 +82,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clss_Tabelas.vb" />
+    <Compile Include="Frm_Cadastro_Colaborador.Designer.vb">
+      <DependentUpon>Frm_Cadastro_Colaborador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Cadastro_Colaborador.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Intro.vb">
       <SubType>Form</SubType>
     </Compile>
