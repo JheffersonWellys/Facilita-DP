@@ -1,4 +1,6 @@
-﻿Public Class Frm_Principal
+﻿Imports Facilita_DP___Módulo_Rescisão.Tabelas
+
+Public Class Frm_Principal
 
     Private Sub Frm_Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -50,13 +52,40 @@
 
     Private Sub TlStrpMnItm_Colaboradores_Editar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_Colaboradores_Editar.Click
 
+        Dim colaborador As Colaborador = SelecionarColaborador()
+
+        If colaborador Is Nothing Then Exit Sub
+
+        Dim Frm_Cadastro As New Frm_Cadastro_Colaborador
+        Frm_Cadastro.AtivarModoFormulario(Modo_Edicao)
+        Frm_Cadastro.Informar_Colaborador(colaborador)
+        Frm_Cadastro.ShowDialog()
+
     End Sub
 
     Private Sub TlStrpMnItm_Colaboradores_Excluir_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_Colaboradores_Excluir.Click
 
+        Dim colaborador As Colaborador = SelecionarColaborador()
+
+        If colaborador Is Nothing Then Exit Sub
+
+        Dim Frm_Cadastro As New Frm_Cadastro_Colaborador
+        Frm_Cadastro.AtivarModoFormulario(Modo_Exclusao)
+        Frm_Cadastro.Informar_Colaborador(colaborador)
+        Frm_Cadastro.ShowDialog()
+
     End Sub
 
     Private Sub TlStrpMnItm_Colaboradores_Visualizar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_Colaboradores_Visualizar.Click
+
+        Dim colaborador As Colaborador = SelecionarColaborador()
+
+        If colaborador Is Nothing Then Exit Sub
+
+        Dim Frm_Cadastro As New Frm_Cadastro_Colaborador
+        Frm_Cadastro.AtivarModoFormulario(Modo_Visualizacao)
+        Frm_Cadastro.Informar_Colaborador(colaborador)
+        Frm_Cadastro.ShowDialog()
 
     End Sub
 
@@ -109,6 +138,16 @@
             .Close()
 
         End With
+
+    End Sub
+
+    Private Sub Frm_Principal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+
+        Dim Colaborador_TemRegistros As Boolean = Md_SQLite_Funcoes.Colaborador_TemRegistros()
+
+        TlStrpMnItm_Colaboradores_Editar.Enabled = Colaborador_TemRegistros
+        TlStrpMnItm_Colaboradores_Excluir.Enabled = Colaborador_TemRegistros
+        TlStrpMnItm_Colaboradores_Visualizar.Enabled = Colaborador_TemRegistros
 
     End Sub
 

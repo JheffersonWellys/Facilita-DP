@@ -25,14 +25,10 @@ Partial Class Frm_Principal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Principal))
         Me.MnStrp_Principal = New System.Windows.Forms.MenuStrip()
         Me.TlStrpMnItm_Menu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TlStrpSprtr_Menu_1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TlStrpMnItm_Cadastros = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TlStrpSprtr_Cadastros_1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TlStrpSprtr_Cadastros_2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TlStrpMnItm_Processos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TlStrpSprtr_Processos_1 = New System.Windows.Forms.ToolStripSeparator()
         Me.TlStrpMnItm_Sobre = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TlStrpSprtr_Menu_1 = New System.Windows.Forms.ToolStripSeparator()
         Me.TlStrpMnItm_Sair = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TlStrpMnItm_Processos = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpMnItm_ExamesMedicos = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpMnItm_Enviar_GuiaEncaminhamento = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpMnItm_Enviar_GuiaEncaminhamento_Demissional = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,10 +38,12 @@ Partial Class Frm_Principal
         Me.TlStrpSprtr_ExamesMedicos_2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TlStrpMnItm_Enviar_SolicitacaoAso = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpMnItm_Enviar_SolicitacaoAso_Demissional = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TlStrpSprtr_Processos_1 = New System.Windows.Forms.ToolStripSeparator()
         Me.TlStrpMnItm_Rescisao = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpMnItm_Emitir_CienciaDeHomologacao = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpSprtr_Rescisao_1 = New System.Windows.Forms.ToolStripSeparator()
         Me.TlStrpMnItm_Emitir_FinsRescisorios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TlStrpMnItm_Cadastros = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpMnItm_Colaboradores = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpMnItm_Colaboradores_Adicionar = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpSprtr_Colaboradores_1 = New System.Windows.Forms.ToolStripSeparator()
@@ -54,6 +52,7 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_Colaboradores_Excluir = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpSprtr_Colaboradores_3 = New System.Windows.Forms.ToolStripSeparator()
         Me.TlStrpMnItm_Colaboradores_Visualizar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TlStrpSprtr_Cadastros_1 = New System.Windows.Forms.ToolStripSeparator()
         Me.TlStrpMnItm_UnidadesSenac = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpMnItm_UnidadesSenac_Adicionar = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpSprtr_UnidadesSenac_1 = New System.Windows.Forms.ToolStripSeparator()
@@ -62,6 +61,7 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_UnidadesSenac_Excluir = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpSprtr_UnidadesSenac_3 = New System.Windows.Forms.ToolStripSeparator()
         Me.TlStrpMnItm_UnidadesSenac_Visualizar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TlStrpSprtr_Cadastros_2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TlStrpMnItm_ClinicasAutorizadas = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpMnItm_ClinicasAutorizadas_Adicionar = New System.Windows.Forms.ToolStripMenuItem()
         Me.TlStrpSprtr_ClinicasAutorizadas_1 = New System.Windows.Forms.ToolStripSeparator()
@@ -80,7 +80,7 @@ Partial Class Frm_Principal
         Me.MnStrp_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpMnItm_Menu, Me.TlStrpMnItm_Processos, Me.TlStrpMnItm_Cadastros})
         Me.MnStrp_Principal.Location = New System.Drawing.Point(0, 0)
         Me.MnStrp_Principal.Name = "MnStrp_Principal"
-        Me.MnStrp_Principal.Size = New System.Drawing.Size(800, 30)
+        Me.MnStrp_Principal.Size = New System.Drawing.Size(802, 30)
         Me.MnStrp_Principal.TabIndex = 0
         Me.MnStrp_Principal.Text = "MenuStrip1"
         '
@@ -91,40 +91,6 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_Menu.Size = New System.Drawing.Size(50, 26)
         Me.TlStrpMnItm_Menu.Text = "Menu"
         '
-        'TlStrpSprtr_Menu_1
-        '
-        Me.TlStrpSprtr_Menu_1.Name = "TlStrpSprtr_Menu_1"
-        Me.TlStrpSprtr_Menu_1.Size = New System.Drawing.Size(109, 6)
-        '
-        'TlStrpMnItm_Cadastros
-        '
-        Me.TlStrpMnItm_Cadastros.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpMnItm_Colaboradores, Me.TlStrpSprtr_Cadastros_1, Me.TlStrpMnItm_UnidadesSenac, Me.TlStrpSprtr_Cadastros_2, Me.TlStrpMnItm_ClinicasAutorizadas})
-        Me.TlStrpMnItm_Cadastros.Name = "TlStrpMnItm_Cadastros"
-        Me.TlStrpMnItm_Cadastros.Size = New System.Drawing.Size(71, 26)
-        Me.TlStrpMnItm_Cadastros.Text = "Cadastros"
-        '
-        'TlStrpSprtr_Cadastros_1
-        '
-        Me.TlStrpSprtr_Cadastros_1.Name = "TlStrpSprtr_Cadastros_1"
-        Me.TlStrpSprtr_Cadastros_1.Size = New System.Drawing.Size(185, 6)
-        '
-        'TlStrpSprtr_Cadastros_2
-        '
-        Me.TlStrpSprtr_Cadastros_2.Name = "TlStrpSprtr_Cadastros_2"
-        Me.TlStrpSprtr_Cadastros_2.Size = New System.Drawing.Size(185, 6)
-        '
-        'TlStrpMnItm_Processos
-        '
-        Me.TlStrpMnItm_Processos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpMnItm_ExamesMedicos, Me.TlStrpSprtr_Processos_1, Me.TlStrpMnItm_Rescisao})
-        Me.TlStrpMnItm_Processos.Name = "TlStrpMnItm_Processos"
-        Me.TlStrpMnItm_Processos.Size = New System.Drawing.Size(71, 26)
-        Me.TlStrpMnItm_Processos.Text = "Processos"
-        '
-        'TlStrpSprtr_Processos_1
-        '
-        Me.TlStrpSprtr_Processos_1.Name = "TlStrpSprtr_Processos_1"
-        Me.TlStrpSprtr_Processos_1.Size = New System.Drawing.Size(166, 6)
-        '
         'TlStrpMnItm_Sobre
         '
         Me.TlStrpMnItm_Sobre.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.icn_Sobre
@@ -133,6 +99,11 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_Sobre.Size = New System.Drawing.Size(112, 30)
         Me.TlStrpMnItm_Sobre.Text = "Sobre"
         '
+        'TlStrpSprtr_Menu_1
+        '
+        Me.TlStrpSprtr_Menu_1.Name = "TlStrpSprtr_Menu_1"
+        Me.TlStrpSprtr_Menu_1.Size = New System.Drawing.Size(109, 6)
+        '
         'TlStrpMnItm_Sair
         '
         Me.TlStrpMnItm_Sair.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.icn_Sair
@@ -140,6 +111,13 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_Sair.Name = "TlStrpMnItm_Sair"
         Me.TlStrpMnItm_Sair.Size = New System.Drawing.Size(112, 30)
         Me.TlStrpMnItm_Sair.Text = "Sair"
+        '
+        'TlStrpMnItm_Processos
+        '
+        Me.TlStrpMnItm_Processos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpMnItm_ExamesMedicos, Me.TlStrpSprtr_Processos_1, Me.TlStrpMnItm_Rescisao})
+        Me.TlStrpMnItm_Processos.Name = "TlStrpMnItm_Processos"
+        Me.TlStrpMnItm_Processos.Size = New System.Drawing.Size(71, 26)
+        Me.TlStrpMnItm_Processos.Text = "Processos"
         '
         'TlStrpMnItm_ExamesMedicos
         '
@@ -211,6 +189,11 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_Enviar_SolicitacaoAso_Demissional.Size = New System.Drawing.Size(146, 30)
         Me.TlStrpMnItm_Enviar_SolicitacaoAso_Demissional.Text = "Demissional"
         '
+        'TlStrpSprtr_Processos_1
+        '
+        Me.TlStrpSprtr_Processos_1.Name = "TlStrpSprtr_Processos_1"
+        Me.TlStrpSprtr_Processos_1.Size = New System.Drawing.Size(166, 6)
+        '
         'TlStrpMnItm_Rescisao
         '
         Me.TlStrpMnItm_Rescisao.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpMnItm_Emitir_CienciaDeHomologacao, Me.TlStrpSprtr_Rescisao_1, Me.TlStrpMnItm_Emitir_FinsRescisorios})
@@ -240,6 +223,13 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_Emitir_FinsRescisorios.Name = "TlStrpMnItm_Emitir_FinsRescisorios"
         Me.TlStrpMnItm_Emitir_FinsRescisorios.Size = New System.Drawing.Size(250, 30)
         Me.TlStrpMnItm_Emitir_FinsRescisorios.Text = "Emitir Fins Rescisórios"
+        '
+        'TlStrpMnItm_Cadastros
+        '
+        Me.TlStrpMnItm_Cadastros.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpMnItm_Colaboradores, Me.TlStrpSprtr_Cadastros_1, Me.TlStrpMnItm_UnidadesSenac, Me.TlStrpSprtr_Cadastros_2, Me.TlStrpMnItm_ClinicasAutorizadas})
+        Me.TlStrpMnItm_Cadastros.Name = "TlStrpMnItm_Cadastros"
+        Me.TlStrpMnItm_Cadastros.Size = New System.Drawing.Size(71, 26)
+        Me.TlStrpMnItm_Cadastros.Text = "Cadastros"
         '
         'TlStrpMnItm_Colaboradores
         '
@@ -297,6 +287,11 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_Colaboradores_Visualizar.Size = New System.Drawing.Size(188, 30)
         Me.TlStrpMnItm_Colaboradores_Visualizar.Text = "Visualizar"
         '
+        'TlStrpSprtr_Cadastros_1
+        '
+        Me.TlStrpSprtr_Cadastros_1.Name = "TlStrpSprtr_Cadastros_1"
+        Me.TlStrpSprtr_Cadastros_1.Size = New System.Drawing.Size(185, 6)
+        '
         'TlStrpMnItm_UnidadesSenac
         '
         Me.TlStrpMnItm_UnidadesSenac.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpMnItm_UnidadesSenac_Adicionar, Me.TlStrpSprtr_UnidadesSenac_1, Me.TlStrpMnItm_UnidadesSenac_Editar, Me.TlStrpSprtr_UnidadesSenac_2, Me.TlStrpMnItm_UnidadesSenac_Excluir, Me.TlStrpSprtr_UnidadesSenac_3, Me.TlStrpMnItm_UnidadesSenac_Visualizar})
@@ -311,47 +306,52 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_UnidadesSenac_Adicionar.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.icn_Adicionar
         Me.TlStrpMnItm_UnidadesSenac_Adicionar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TlStrpMnItm_UnidadesSenac_Adicionar.Name = "TlStrpMnItm_UnidadesSenac_Adicionar"
-        Me.TlStrpMnItm_UnidadesSenac_Adicionar.Size = New System.Drawing.Size(188, 30)
+        Me.TlStrpMnItm_UnidadesSenac_Adicionar.Size = New System.Drawing.Size(133, 30)
         Me.TlStrpMnItm_UnidadesSenac_Adicionar.Text = "Adicionar"
         '
         'TlStrpSprtr_UnidadesSenac_1
         '
         Me.TlStrpSprtr_UnidadesSenac_1.Name = "TlStrpSprtr_UnidadesSenac_1"
-        Me.TlStrpSprtr_UnidadesSenac_1.Size = New System.Drawing.Size(185, 6)
+        Me.TlStrpSprtr_UnidadesSenac_1.Size = New System.Drawing.Size(130, 6)
         '
         'TlStrpMnItm_UnidadesSenac_Editar
         '
         Me.TlStrpMnItm_UnidadesSenac_Editar.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.icn_Editar
         Me.TlStrpMnItm_UnidadesSenac_Editar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TlStrpMnItm_UnidadesSenac_Editar.Name = "TlStrpMnItm_UnidadesSenac_Editar"
-        Me.TlStrpMnItm_UnidadesSenac_Editar.Size = New System.Drawing.Size(188, 30)
+        Me.TlStrpMnItm_UnidadesSenac_Editar.Size = New System.Drawing.Size(133, 30)
         Me.TlStrpMnItm_UnidadesSenac_Editar.Text = "Editar"
         '
         'TlStrpSprtr_UnidadesSenac_2
         '
         Me.TlStrpSprtr_UnidadesSenac_2.Name = "TlStrpSprtr_UnidadesSenac_2"
-        Me.TlStrpSprtr_UnidadesSenac_2.Size = New System.Drawing.Size(185, 6)
+        Me.TlStrpSprtr_UnidadesSenac_2.Size = New System.Drawing.Size(130, 6)
         '
         'TlStrpMnItm_UnidadesSenac_Excluir
         '
         Me.TlStrpMnItm_UnidadesSenac_Excluir.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.icn_Excluir
         Me.TlStrpMnItm_UnidadesSenac_Excluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TlStrpMnItm_UnidadesSenac_Excluir.Name = "TlStrpMnItm_UnidadesSenac_Excluir"
-        Me.TlStrpMnItm_UnidadesSenac_Excluir.Size = New System.Drawing.Size(188, 30)
+        Me.TlStrpMnItm_UnidadesSenac_Excluir.Size = New System.Drawing.Size(133, 30)
         Me.TlStrpMnItm_UnidadesSenac_Excluir.Text = "Excluir"
         '
         'TlStrpSprtr_UnidadesSenac_3
         '
         Me.TlStrpSprtr_UnidadesSenac_3.Name = "TlStrpSprtr_UnidadesSenac_3"
-        Me.TlStrpSprtr_UnidadesSenac_3.Size = New System.Drawing.Size(185, 6)
+        Me.TlStrpSprtr_UnidadesSenac_3.Size = New System.Drawing.Size(130, 6)
         '
         'TlStrpMnItm_UnidadesSenac_Visualizar
         '
         Me.TlStrpMnItm_UnidadesSenac_Visualizar.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.Icn_Visualizar
         Me.TlStrpMnItm_UnidadesSenac_Visualizar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TlStrpMnItm_UnidadesSenac_Visualizar.Name = "TlStrpMnItm_UnidadesSenac_Visualizar"
-        Me.TlStrpMnItm_UnidadesSenac_Visualizar.Size = New System.Drawing.Size(188, 30)
+        Me.TlStrpMnItm_UnidadesSenac_Visualizar.Size = New System.Drawing.Size(133, 30)
         Me.TlStrpMnItm_UnidadesSenac_Visualizar.Text = "Visualizar"
+        '
+        'TlStrpSprtr_Cadastros_2
+        '
+        Me.TlStrpSprtr_Cadastros_2.Name = "TlStrpSprtr_Cadastros_2"
+        Me.TlStrpSprtr_Cadastros_2.Size = New System.Drawing.Size(185, 6)
         '
         'TlStrpMnItm_ClinicasAutorizadas
         '
@@ -367,46 +367,46 @@ Partial Class Frm_Principal
         Me.TlStrpMnItm_ClinicasAutorizadas_Adicionar.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.icn_Adicionar
         Me.TlStrpMnItm_ClinicasAutorizadas_Adicionar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TlStrpMnItm_ClinicasAutorizadas_Adicionar.Name = "TlStrpMnItm_ClinicasAutorizadas_Adicionar"
-        Me.TlStrpMnItm_ClinicasAutorizadas_Adicionar.Size = New System.Drawing.Size(188, 30)
+        Me.TlStrpMnItm_ClinicasAutorizadas_Adicionar.Size = New System.Drawing.Size(133, 30)
         Me.TlStrpMnItm_ClinicasAutorizadas_Adicionar.Text = "Adicionar"
         '
         'TlStrpSprtr_ClinicasAutorizadas_1
         '
         Me.TlStrpSprtr_ClinicasAutorizadas_1.Name = "TlStrpSprtr_ClinicasAutorizadas_1"
-        Me.TlStrpSprtr_ClinicasAutorizadas_1.Size = New System.Drawing.Size(185, 6)
+        Me.TlStrpSprtr_ClinicasAutorizadas_1.Size = New System.Drawing.Size(130, 6)
         '
         'TlStrpMnItm_ClinicasAutorizadas_Editar
         '
         Me.TlStrpMnItm_ClinicasAutorizadas_Editar.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.icn_Editar
         Me.TlStrpMnItm_ClinicasAutorizadas_Editar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TlStrpMnItm_ClinicasAutorizadas_Editar.Name = "TlStrpMnItm_ClinicasAutorizadas_Editar"
-        Me.TlStrpMnItm_ClinicasAutorizadas_Editar.Size = New System.Drawing.Size(188, 30)
+        Me.TlStrpMnItm_ClinicasAutorizadas_Editar.Size = New System.Drawing.Size(133, 30)
         Me.TlStrpMnItm_ClinicasAutorizadas_Editar.Text = "Editar"
         '
         'TlStrpSprtr_ClinicasAutorizadas_2
         '
         Me.TlStrpSprtr_ClinicasAutorizadas_2.Name = "TlStrpSprtr_ClinicasAutorizadas_2"
-        Me.TlStrpSprtr_ClinicasAutorizadas_2.Size = New System.Drawing.Size(185, 6)
+        Me.TlStrpSprtr_ClinicasAutorizadas_2.Size = New System.Drawing.Size(130, 6)
         '
         'TlStrpMnItm_ClinicasAutorizadas_Excluir
         '
         Me.TlStrpMnItm_ClinicasAutorizadas_Excluir.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.icn_Excluir
         Me.TlStrpMnItm_ClinicasAutorizadas_Excluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TlStrpMnItm_ClinicasAutorizadas_Excluir.Name = "TlStrpMnItm_ClinicasAutorizadas_Excluir"
-        Me.TlStrpMnItm_ClinicasAutorizadas_Excluir.Size = New System.Drawing.Size(188, 30)
+        Me.TlStrpMnItm_ClinicasAutorizadas_Excluir.Size = New System.Drawing.Size(133, 30)
         Me.TlStrpMnItm_ClinicasAutorizadas_Excluir.Text = "Excluir"
         '
         'TlStrpSprtr_ClinicasAutorizadas_3
         '
         Me.TlStrpSprtr_ClinicasAutorizadas_3.Name = "TlStrpSprtr_ClinicasAutorizadas_3"
-        Me.TlStrpSprtr_ClinicasAutorizadas_3.Size = New System.Drawing.Size(185, 6)
+        Me.TlStrpSprtr_ClinicasAutorizadas_3.Size = New System.Drawing.Size(130, 6)
         '
         'TlStrpMnItm_ClinicasAutorizadas_Visualizar
         '
         Me.TlStrpMnItm_ClinicasAutorizadas_Visualizar.Image = Global.Facilita_DP___Módulo_Rescisão.My.Resources.Resources.Icn_Visualizar
         Me.TlStrpMnItm_ClinicasAutorizadas_Visualizar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TlStrpMnItm_ClinicasAutorizadas_Visualizar.Name = "TlStrpMnItm_ClinicasAutorizadas_Visualizar"
-        Me.TlStrpMnItm_ClinicasAutorizadas_Visualizar.Size = New System.Drawing.Size(188, 30)
+        Me.TlStrpMnItm_ClinicasAutorizadas_Visualizar.Size = New System.Drawing.Size(133, 30)
         Me.TlStrpMnItm_ClinicasAutorizadas_Visualizar.Text = "Visualizar"
         '
         'Frm_Principal
@@ -414,7 +414,7 @@ Partial Class Frm_Principal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(802, 450)
         Me.Controls.Add(Me.MnStrp_Principal)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MnStrp_Principal
