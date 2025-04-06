@@ -4,6 +4,7 @@
 
         Tmr_Intro.Start()
         Call CarregarInformacoes()
+        Call InicializarBandoDeDados()
 
     End Sub
 
