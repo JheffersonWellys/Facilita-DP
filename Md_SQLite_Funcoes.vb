@@ -3,68 +3,125 @@ Imports System.Data.SQLite
 
 Module Md_SQLite_Funcoes
 
-    Private ReadOnly dbPath As String = Application.StartupPath & "\" & My.Settings.App_Nome & ".db"
-    Private ReadOnly connectionString As String = "Data Source=" & dbPath & ";Version=3;"
-
     '******************************************************************************************************************
     ' Funções de manipulação de dados para a tabela Colaborador
 
-    Public Sub Colaborador_Adicionar(colaborador As Colaborador)
-        Using conn As New SQLiteConnection(connectionString)
-            conn.Open()
-            Dim cmd As New SQLiteCommand("INSERT INTO colaborador 
-                (nome_completo, chapa, email_pessoal, email_corporativo, telefone_pessoal, cpf, rg, data_nascimento, data_demissao, funcao, setor, status) 
-                VALUES (@nome, @chp, @emailPes, @emailCorp, @tel, @cpf, @rg, @nasc, @demiss, @funcao, @setor, @status)", conn)
+    Public Function Colaborador_Adicionar(colaborador As Colaborador) As Boolean
 
-            cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto)
-            cmd.Parameters.AddWithValue("@chp", colaborador.Chapa)
-            cmd.Parameters.AddWithValue("@emailPes", colaborador.EmailPessoal)
-            cmd.Parameters.AddWithValue("@emailCorp", colaborador.EmailCorporativo)
-            cmd.Parameters.AddWithValue("@tel", colaborador.TelefonePessoal)
-            cmd.Parameters.AddWithValue("@cpf", colaborador.CPF)
-            cmd.Parameters.AddWithValue("@rg", colaborador.RG)
-            cmd.Parameters.AddWithValue("@nasc", colaborador.DataNascimento)
-            cmd.Parameters.AddWithValue("@demiss", colaborador.DataDemissao)
-            cmd.Parameters.AddWithValue("@funcao", colaborador.Funcao)
-            cmd.Parameters.AddWithValue("@setor", colaborador.Setor)
-            cmd.Parameters.AddWithValue("@status", colaborador.Status)
-            cmd.ExecuteNonQuery()
-        End Using
-    End Sub
+        Try
 
-    Public Sub Colaborador_Atualizar(colaborador As Colaborador)
-        Using conn As New SQLiteConnection(connectionString)
-            conn.Open()
-            Dim cmd As New SQLiteCommand("UPDATE colaborador SET 
-                nome_completo = @nome, chapa = @chp, email_pessoal = @emailPes, email_corporativo = @emailCorp, telefone_pessoal = @tel, 
-                cpf = @cpf, rg = @rg, data_nascimento = @nasc, data_demissao = @demiss, funcao = @funcao, setor = @setor, status = @status 
-                WHERE id = @id", conn)
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("
+            INSERT INTO colaborador 
+            (nome_completo, chapa, email_pessoal, email_corporativo, telefone_pessoal, cpf, rg, data_admissao, data_nascimento, data_demissao, funcao, setor, sexo, demitido, status) 
+            VALUES 
+            (@nome, @chp, @emailPes, @emailCorp, @tel, @cpf, @rg, @admiss, @nasc, @demiss, @funcao, @setor, @sx, @demitido, @status)", conn)
 
-            cmd.Parameters.AddWithValue("@id", colaborador.Id)
-            cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto)
-            cmd.Parameters.AddWithValue("@chp", colaborador.Chapa)
-            cmd.Parameters.AddWithValue("@emailPes", colaborador.EmailPessoal)
-            cmd.Parameters.AddWithValue("@emailCorp", colaborador.EmailCorporativo)
-            cmd.Parameters.AddWithValue("@tel", colaborador.TelefonePessoal)
-            cmd.Parameters.AddWithValue("@cpf", colaborador.CPF)
-            cmd.Parameters.AddWithValue("@rg", colaborador.RG)
-            cmd.Parameters.AddWithValue("@nasc", colaborador.DataNascimento)
-            cmd.Parameters.AddWithValue("@demiss", colaborador.DataDemissao)
-            cmd.Parameters.AddWithValue("@funcao", colaborador.Funcao)
-            cmd.Parameters.AddWithValue("@setor", colaborador.Setor)
-            cmd.Parameters.AddWithValue("@status", colaborador.Status)
-            cmd.ExecuteNonQuery()
-        End Using
-    End Sub
+                cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto)
+                cmd.Parameters.AddWithValue("@chp", colaborador.Chapa)
+                cmd.Parameters.AddWithValue("@emailPes", colaborador.EmailPessoal)
+                cmd.Parameters.AddWithValue("@emailCorp", colaborador.EmailCorporativo)
+                cmd.Parameters.AddWithValue("@tel", colaborador.TelefonePessoal)
+                cmd.Parameters.AddWithValue("@cpf", colaborador.CPF)
+                cmd.Parameters.AddWithValue("@rg", colaborador.RG)
+                cmd.Parameters.AddWithValue("@admiss", colaborador.DataAdmissao)
+                cmd.Parameters.AddWithValue("@nasc", colaborador.DataNascimento)
+                cmd.Parameters.AddWithValue("@demiss", colaborador.DataDemissao)
+                cmd.Parameters.AddWithValue("@funcao", colaborador.Funcao)
+                cmd.Parameters.AddWithValue("@setor", colaborador.Setor)
+                cmd.Parameters.AddWithValue("@sx", colaborador.Sexo)
+                cmd.Parameters.AddWithValue("@demitido", If(colaborador.Demitido, 1, 0))
+                cmd.Parameters.AddWithValue("@status", colaborador.Status)
+                cmd.ExecuteNonQuery()
+            End Using
 
-    Public Sub Colaborador_Excluir(id As Integer)
-        Using conn As New SQLiteConnection(connectionString)
-            conn.Open()
-            Dim cmd As New SQLiteCommand("DELETE FROM colaborador WHERE id = @id", conn)
-            cmd.Parameters.AddWithValue("@id", id)
-            cmd.ExecuteNonQuery()
-        End Using
-    End Sub
+        Catch ex As Exception
+
+            Return False
+
+        End Try
+
+        Return True
+
+    End Function
+
+
+
+    Public Function Colaborador_Atualizar(colaborador As Colaborador) As Boolean
+
+        Try
+
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("
+            UPDATE colaborador SET 
+            nome_completo = @nome, 
+            chapa = @chp, 
+            email_pessoal = @emailPes, 
+            email_corporativo = @emailCorp, 
+            telefone_pessoal = @tel, 
+            cpf = @cpf, 
+            rg = @rg, 
+            data_admissao = @admiss, 
+            data_nascimento = @nasc, 
+            data_demissao = @demiss, 
+            funcao = @funcao, 
+            setor = @setor, 
+            sexo = @sx, 
+            demitido = @demitido, 
+            status = @status 
+            WHERE id = @id", conn)
+
+                cmd.Parameters.AddWithValue("@id", colaborador.Id)
+                cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto)
+                cmd.Parameters.AddWithValue("@chp", colaborador.Chapa)
+                cmd.Parameters.AddWithValue("@emailPes", colaborador.EmailPessoal)
+                cmd.Parameters.AddWithValue("@emailCorp", colaborador.EmailCorporativo)
+                cmd.Parameters.AddWithValue("@tel", colaborador.TelefonePessoal)
+                cmd.Parameters.AddWithValue("@cpf", colaborador.CPF)
+                cmd.Parameters.AddWithValue("@rg", colaborador.RG)
+                cmd.Parameters.AddWithValue("@admiss", colaborador.DataAdmissao)
+                cmd.Parameters.AddWithValue("@nasc", colaborador.DataNascimento)
+                cmd.Parameters.AddWithValue("@demiss", colaborador.DataDemissao)
+                cmd.Parameters.AddWithValue("@funcao", colaborador.Funcao)
+                cmd.Parameters.AddWithValue("@setor", colaborador.Setor)
+                cmd.Parameters.AddWithValue("@sx", colaborador.Sexo)
+                cmd.Parameters.AddWithValue("@demitido", If(colaborador.Demitido, 1, 0))
+                cmd.Parameters.AddWithValue("@status", colaborador.Status)
+                cmd.ExecuteNonQuery()
+            End Using
+
+        Catch ex As Exception
+
+            Return False
+
+        End Try
+
+        Return True
+
+    End Function
+
+    Public Function Colaborador_Excluir(id As Integer) As Boolean
+
+        Try
+
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("DELETE FROM colaborador WHERE id = @id", conn)
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.ExecuteNonQuery()
+            End Using
+
+        Catch ex As Exception
+
+            Return False
+
+        End Try
+
+        Return True
+
+    End Function
 
     Public Function Colaborador_ListarTodos() As DataTable
         Dim dt As New DataTable
