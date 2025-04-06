@@ -81,6 +81,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clss_Tabelas.vb" />
     <Compile Include="Frm_Intro.vb">
       <SubType>Form</SubType>
     </Compile>
