@@ -1,4 +1,6 @@
-﻿Module Md_Funcoes_Auxiliares
+﻿Imports Facilita_DP___Módulo_Rescisão.Tabelas
+
+Module Md_Funcoes_Auxiliares
 
     Public Function CampoObrigatorio(mensagem As String, janela As TabControl, aba As TabPage, controle As Control) As Boolean
         MessageBox.Show(mensagem, "Campo Obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -30,5 +32,32 @@
         Return True
     End Function
 
+    Public Function ConverterParaTexto(valor As Object) As String
+        Return If(IsDBNull(valor), String.Empty, valor.ToString())
+    End Function
+
+    Public Function ConverterParaData(valor As Object) As Date
+        Return If(IsDBNull(valor), Date.MinValue, Convert.ToDateTime(valor))
+    End Function
+
+    Public Function ConverterParaBooleano(valor As Object) As Boolean
+        Return If(IsDBNull(valor), False, Convert.ToBoolean(valor))
+    End Function
+
+
+    Public Function SelecionarColaborador() As Colaborador
+        Using frm As New Frm_Selecionar_Colaborador
+            If frm.ShowDialog() = DialogResult.OK Then
+                Return frm.ColaboradorSelecionado
+            End If
+        End Using
+        Return Nothing
+    End Function
+
+    Public Sub AlterarnomeFormulario(Frm As Form, NomeFormalario As String, ModoStatus As String)
+
+        Frm.Text = NomeFormalario & " | Modo " & ModoStatus
+
+    End Sub
 
 End Module

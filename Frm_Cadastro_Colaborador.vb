@@ -19,9 +19,26 @@ Public Class Frm_Cadastro_Colaborador
 
     Private Sub InicializarFormulario()
 
+        Call Configurar_Datas()
+        Call RecuperarDados_Colaborador()
         Call Configurar_VisualizacaoBotoesAcao()
         Call Configurar_BotaoExecutacao()
-        Call Configurar_Datas
+        Call Configurar_NomeFormulario
+
+    End Sub
+
+    Private Sub Configurar_NomeFormulario()
+
+        Select Case ModoAtual
+            Case Modo_Cadastro
+                Call AlterarnomeFormulario(Me, "Colaborador", "Cadastro")
+            Case Modo_Edicao
+                Call AlterarnomeFormulario(Me, "Colaborador", "Edição")
+            Case Modo_Exclusao
+                Call AlterarnomeFormulario(Me, "Colaborador", "Exclusão")
+            Case Modo_Visualizacao
+                Call AlterarnomeFormulario(Me, "Colaborador", "Visualização")
+        End Select
 
     End Sub
 
@@ -47,21 +64,25 @@ Public Class Frm_Cadastro_Colaborador
                 Bttn_Executar.Visible = True
                 Bttn_Excluir.Visible = False
                 Bttn_Limpar.Visible = True
+                Call Configurar_StatusCampos(True)
 
             Case Modo_Edicao
                 Bttn_Executar.Visible = True
                 Bttn_Excluir.Visible = False
                 Bttn_Limpar.Visible = True
+                Call Configurar_StatusCampos(True)
 
             Case Modo_Exclusao
                 Bttn_Executar.Visible = False
                 Bttn_Excluir.Visible = True
                 Bttn_Limpar.Visible = False
+                Call Configurar_StatusCampos(False)
 
             Case Modo_Visualizacao
                 Bttn_Executar.Visible = False
                 Bttn_Excluir.Visible = False
                 Bttn_Limpar.Visible = False
+                Call Configurar_StatusCampos(False)
 
         End Select
 
@@ -118,17 +139,49 @@ Public Class Frm_Cadastro_Colaborador
 
     End Sub
 
+    Private Sub Configurar_StatusCampos(Status As Boolean)
+
+        With Me
+
+            .TxtBx_NomeCompleto.Enabled = Status
+            .TxtBx_EmailPessoal.Enabled = Status
+            .CmbBx_Sexo.Enabled = Status
+            .DtTmPckr_DataNascimento.Enabled = Status
+            .MskdTxtBx_TelefonePessoal.Enabled = Status
+            .MskdTxtBx_CPF.Enabled = Status
+            .MskdTxtBx_RG.Enabled = Status
+            .TxtBx_EmailCorporativo.Enabled = Status
+            .TxtBx_Setor.Enabled = Status
+            .TxtBx_Funcao.Enabled = Status
+            .MskdTxtBx_Chapa.Enabled = Status
+            .DtTmPckr_DataAdmissao.Enabled = Status
+            .ChckBx_Demitido.Enabled = Status
+            .ChckBx_Demitido.Enabled = Status
+            .DtTmPckr_DataDemissao.Enabled = Status
+            .Lbl_DataDemissao.Enabled = Status
+            .DtTmPckr_DataDemissao.Enabled = Status
+            .ChckBx_Demitido.Enabled = Status
+            .DtTmPckr_DataDemissao.Enabled = Status
+
+        End With
+
+    End Sub
+
     Private Sub RecuperarDados_Colaborador()
 
         With Me
 
             .TxtBx_NomeCompleto.Text = ColaboradorAtual.NomeCompleto
             .TxtBx_EmailPessoal.Text = ColaboradorAtual.EmailPessoal
-            .CmbBx_Sexo.SelectedValue = ColaboradorAtual.Sexo
+            .CmbBx_Sexo.SelectedItem = ColaboradorAtual.Sexo
 
             If Not String.IsNullOrEmpty(ColaboradorAtual.DataNascimento) Then
 
-                .DtTmPckr_DataNascimento.Value = ColaboradorAtual.DataNascimento
+                If ModoAtual = Modo_Cadastro Then
+                    .DtTmPckr_DataNascimento.Value = DateAdd(DateInterval.Day, -6570, Date.Today)
+                Else
+                    .DtTmPckr_DataNascimento.Value = ColaboradorAtual.DataNascimento
+                End If
 
             End If
 
@@ -142,7 +195,12 @@ Public Class Frm_Cadastro_Colaborador
 
             If Not String.IsNullOrEmpty(ColaboradorAtual.DataAdmissao) Then
 
-                .DtTmPckr_DataAdmissao.Value = ColaboradorAtual.DataAdmissao
+                If ModoAtual = Modo_Cadastro Then
+                    .DtTmPckr_DataAdmissao.Value = Date.Today
+                Else
+                    .DtTmPckr_DataAdmissao.Value = ColaboradorAtual.DataAdmissao
+                End If
+
 
             End If
 

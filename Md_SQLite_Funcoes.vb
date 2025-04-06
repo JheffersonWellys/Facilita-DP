@@ -46,8 +46,6 @@ Module Md_SQLite_Funcoes
 
     End Function
 
-
-
     Public Function Colaborador_Atualizar(colaborador As Colaborador) As Boolean
 
         Try
@@ -124,14 +122,48 @@ Module Md_SQLite_Funcoes
     End Function
 
     Public Function Colaborador_ListarTodos() As DataTable
-        Dim dt As New DataTable
-        Using conn As New SQLiteConnection(connectionString)
-            conn.Open()
-            Dim cmd As New SQLiteCommand("SELECT * FROM colaborador", conn)
-            Dim da As New SQLiteDataAdapter(cmd)
-            da.Fill(dt)
-        End Using
-        Return dt
+
+        Dim DtTble_Lista As New DataTable()
+
+        Try
+
+            Using conn As New SQLiteConnection(connectionString)
+
+                conn.Open()
+
+                Using cmd As New SQLiteCommand("SELECT * FROM colaborador WHERE status = @status", conn)
+                    cmd.Parameters.AddWithValue("@status", "Ativo")
+
+                    Using da As New SQLiteDataAdapter(cmd)
+
+                        da.Fill(DtTble_Lista)
+
+                    End Using
+
+                End Using
+
+            End Using
+
+        Catch ex As Exception
+
+            Return Nothing
+
+        End Try
+
+        Return DtTble_Lista
+
+    End Function
+    Public Function Colaborador_TemRegistros() As Boolean
+        Try
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("SELECT 1 FROM colaborador LIMIT 1", conn)
+                Dim result = cmd.ExecuteScalar()
+                Return result IsNot Nothing
+            End Using
+        Catch ex As Exception
+            Return False
+        End Try
     End Function
 
     '******************************************************************************************************************
