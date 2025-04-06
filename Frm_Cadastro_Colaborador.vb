@@ -94,6 +94,28 @@ Public Class Frm_Cadastro_Colaborador
 
     Private Sub LimparFormulario()
 
+        With Me
+
+            .TxtBx_NomeCompleto.Clear()
+            .TxtBx_EmailPessoal.Clear()
+            .CmbBx_Sexo.SelectedIndex = -1
+            .DtTmPckr_DataNascimento.Value = DateAdd(DateInterval.Day, -6570, Date.Today)
+            .MskdTxtBx_TelefonePessoal.Clear()
+            .MskdTxtBx_CPF.Clear()
+            .MskdTxtBx_RG.Clear()
+            .TxtBx_EmailCorporativo.Clear()
+            .TxtBx_Setor.Clear()
+            .TxtBx_Funcao.Clear()
+            .MskdTxtBx_Chapa.Clear()
+            .DtTmPckr_DataAdmissao.Value = Date.Today
+            .ChckBx_Demitido.Checked = False
+            .ChckBx_Demitido.Visible = False
+            .DtTmPckr_DataDemissao.Visible = False
+            .Lbl_DataDemissao.Visible = False
+            .DtTmPckr_DataDemissao.Value = Date.Today
+
+        End With
+
     End Sub
 
     Private Sub RecuperarDados_Colaborador()
