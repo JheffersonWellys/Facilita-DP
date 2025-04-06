@@ -121,6 +121,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_Cadastro_Colaborador.resx">
+      <DependentUpon>Frm_Cadastro_Colaborador.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Intro.resx">
       <DependentUpon>Frm_Intro.vb</DependentUpon>
     </EmbeddedResource>

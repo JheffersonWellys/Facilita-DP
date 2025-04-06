@@ -13,17 +13,18 @@ Module Md_SQLite_Funcoes
         Using conn As New SQLiteConnection(connectionString)
             conn.Open()
             Dim cmd As New SQLiteCommand("INSERT INTO colaborador 
-                (nome_completo, email_pessoal, email_corporativo, telefone_pessoal, cpf, rg, data_nascimento, data_demissao, funcao, setor, status) 
-                VALUES (@nome, @emailPes, @emailCorp, @tel, @cpf, @rg, @nasc, @demiss, @funcao, @setor, @status)", conn)
+                (nome_completo, chapa, email_pessoal, email_corporativo, telefone_pessoal, cpf, rg, data_nascimento, data_demissao, funcao, setor, status) 
+                VALUES (@nome, @chp, @emailPes, @emailCorp, @tel, @cpf, @rg, @nasc, @demiss, @funcao, @setor, @status)", conn)
 
             cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto)
+            cmd.Parameters.AddWithValue("@chp", colaborador.Chapa)
             cmd.Parameters.AddWithValue("@emailPes", colaborador.EmailPessoal)
             cmd.Parameters.AddWithValue("@emailCorp", colaborador.EmailCorporativo)
             cmd.Parameters.AddWithValue("@tel", colaborador.TelefonePessoal)
             cmd.Parameters.AddWithValue("@cpf", colaborador.CPF)
             cmd.Parameters.AddWithValue("@rg", colaborador.RG)
             cmd.Parameters.AddWithValue("@nasc", colaborador.DataNascimento)
-            cmd.Parameters.AddWithValue("@demiss", If(colaborador.DataDemissao.HasValue, colaborador.DataDemissao.Value, DBNull.Value))
+            cmd.Parameters.AddWithValue("@demiss", colaborador.DataDemissao)
             cmd.Parameters.AddWithValue("@funcao", colaborador.Funcao)
             cmd.Parameters.AddWithValue("@setor", colaborador.Setor)
             cmd.Parameters.AddWithValue("@status", colaborador.Status)
@@ -35,19 +36,20 @@ Module Md_SQLite_Funcoes
         Using conn As New SQLiteConnection(connectionString)
             conn.Open()
             Dim cmd As New SQLiteCommand("UPDATE colaborador SET 
-                nome_completo = @nome, email_pessoal = @emailPes, email_corporativo = @emailCorp, telefone_pessoal = @tel, 
+                nome_completo = @nome, chapa = @chp, email_pessoal = @emailPes, email_corporativo = @emailCorp, telefone_pessoal = @tel, 
                 cpf = @cpf, rg = @rg, data_nascimento = @nasc, data_demissao = @demiss, funcao = @funcao, setor = @setor, status = @status 
                 WHERE id = @id", conn)
 
             cmd.Parameters.AddWithValue("@id", colaborador.Id)
             cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto)
+            cmd.Parameters.AddWithValue("@chp", colaborador.Chapa)
             cmd.Parameters.AddWithValue("@emailPes", colaborador.EmailPessoal)
             cmd.Parameters.AddWithValue("@emailCorp", colaborador.EmailCorporativo)
             cmd.Parameters.AddWithValue("@tel", colaborador.TelefonePessoal)
             cmd.Parameters.AddWithValue("@cpf", colaborador.CPF)
             cmd.Parameters.AddWithValue("@rg", colaborador.RG)
             cmd.Parameters.AddWithValue("@nasc", colaborador.DataNascimento)
-            cmd.Parameters.AddWithValue("@demiss", If(colaborador.DataDemissao.HasValue, colaborador.DataDemissao.Value, DBNull.Value))
+            cmd.Parameters.AddWithValue("@demiss", colaborador.DataDemissao)
             cmd.Parameters.AddWithValue("@funcao", colaborador.Funcao)
             cmd.Parameters.AddWithValue("@setor", colaborador.Setor)
             cmd.Parameters.AddWithValue("@status", colaborador.Status)
