@@ -8,5 +8,8 @@
     <Setting Name="App_Módulo" Type="System.String" Scope="User">
       <Value Profile="(Default)">Rescisão</Value>
     </Setting>
+    <Setting Name="App_Nome" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Facilita DP - Módulo Rescisão</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -4,7 +4,7 @@ Imports System.Windows.Forms
 
 Module Md_SQLite
 
-    Dim dbPath As String = Application.StartupPath & "\" & "FacilitaDP" & ".db"
+    Private ReadOnly dbPath As String = Application.StartupPath & "\" & My.Settings.App_Nome & ".db"
 
     Public Sub InicializarBandoDeDados()
 

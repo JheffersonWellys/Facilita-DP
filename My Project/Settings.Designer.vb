@@ -77,6 +77,18 @@ Namespace My
                 Me("App_Módulo") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Facilita DP - Módulo Rescisão")>  _
+        Public Property App_Nome() As String
+            Get
+                Return CType(Me("App_Nome"),String)
+            End Get
+            Set
+                Me("App_Nome") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
