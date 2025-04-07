@@ -74,7 +74,8 @@ Module Md_SQLite
 
                     CREATE TABLE IF NOT EXISTS clinica_autorizada (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        nome_clinica TEXT,
+                        razao_social TEXT,
+                        nome_atendente TEXT,
                         id_endereco INTEGER,
                         telefone_atendimento TEXT,
                         fixo_atendimento TEXT,

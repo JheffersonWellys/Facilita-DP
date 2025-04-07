@@ -40,7 +40,8 @@
 
     Public Class ClinicaAutorizada
         Public Property Id As Integer
-        Public Property NomeClinica As String
+        Public Property RazaoSocial As String
+        Public Property NomeAtendente As String
         Public Property IdEndereco As Integer
         Public Property TelefoneAtendimento As String
         Public Property FixoAtendimento As String
