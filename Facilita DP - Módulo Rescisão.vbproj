@@ -82,6 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clss_Tabelas.vb" />
+    <Compile Include="Frm_Cadastro_Clinicas.Designer.vb">
+      <DependentUpon>Frm_Cadastro_Clinicas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Cadastro_Clinicas.vb" />
     <Compile Include="Frm_Cadastro_Colaborador.Designer.vb">
       <DependentUpon>Frm_Cadastro_Colaborador.vb</DependentUpon>
     </Compile>
@@ -129,6 +133,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_Cadastro_Clinicas.resx">
+      <DependentUpon>Frm_Cadastro_Clinicas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Cadastro_Colaborador.resx">
       <DependentUpon>Frm_Cadastro_Colaborador.vb</DependentUpon>
     </EmbeddedResource>
