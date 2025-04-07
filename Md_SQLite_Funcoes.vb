@@ -169,47 +169,134 @@ Module Md_SQLite_Funcoes
     '******************************************************************************************************************
     ' Funções de manipulação de dados para a tabela Endereço
 
-    Public Sub Endereco_Adicionar(endereco As Endereco)
-        Using conn As New SQLiteConnection(connectionString)
-            conn.Open()
-            Dim cmd As New SQLiteCommand("INSERT INTO endereco (cep, logradouro, numero, bairro, cidade, estado, local, status) VALUES (@cep, @log, @num, @bairro, @cidade, @estado, @local, @status)", conn)
-            cmd.Parameters.AddWithValue("@cep", endereco.CEP)
-            cmd.Parameters.AddWithValue("@log", endereco.Logradouro)
-            cmd.Parameters.AddWithValue("@num", endereco.Numero)
-            cmd.Parameters.AddWithValue("@bairro", endereco.Bairro)
-            cmd.Parameters.AddWithValue("@cidade", endereco.Cidade)
-            cmd.Parameters.AddWithValue("@estado", endereco.Estado)
-            cmd.Parameters.AddWithValue("@local", endereco.Local)
-            cmd.Parameters.AddWithValue("@status", endereco.Status)
-            cmd.ExecuteNonQuery()
-        End Using
-    End Sub
+    Public Function Endereco_Adicionar(endereco As Endereco) As Boolean
 
-    Public Sub Endereco_Atualizar(endereco As Endereco)
-        Using conn As New SQLiteConnection(connectionString)
-            conn.Open()
-            Dim cmd As New SQLiteCommand("UPDATE endereco SET cep = @cep, logradouro = @log, numero = @num, bairro = @bairro, cidade = @cidade, estado = @estado, local = @local, status = @status WHERE id = @id", conn)
-            cmd.Parameters.AddWithValue("@id", endereco.Id)
-            cmd.Parameters.AddWithValue("@cep", endereco.CEP)
-            cmd.Parameters.AddWithValue("@log", endereco.Logradouro)
-            cmd.Parameters.AddWithValue("@num", endereco.Numero)
-            cmd.Parameters.AddWithValue("@bairro", endereco.Bairro)
-            cmd.Parameters.AddWithValue("@cidade", endereco.Cidade)
-            cmd.Parameters.AddWithValue("@estado", endereco.Estado)
-            cmd.Parameters.AddWithValue("@local", endereco.Local)
-            cmd.Parameters.AddWithValue("@status", endereco.Status)
-            cmd.ExecuteNonQuery()
-        End Using
-    End Sub
+        Try
 
-    Public Sub Endereco_Excluir(id As Integer)
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("INSERT INTO endereco (cep, logradouro, numero, bairro, cidade, estado, local, status) VALUES (@cep, @log, @num, @bairro, @cidade, @estado, @local, @status)", conn)
+                cmd.Parameters.AddWithValue("@cep", endereco.CEP)
+                cmd.Parameters.AddWithValue("@log", endereco.Logradouro)
+                cmd.Parameters.AddWithValue("@num", endereco.Numero)
+                cmd.Parameters.AddWithValue("@bairro", endereco.Bairro)
+                cmd.Parameters.AddWithValue("@cidade", endereco.Cidade)
+                cmd.Parameters.AddWithValue("@estado", endereco.Estado)
+                cmd.Parameters.AddWithValue("@local", endereco.Local)
+                cmd.Parameters.AddWithValue("@status", endereco.Status)
+                cmd.ExecuteNonQuery()
+            End Using
+
+        Catch ex As Exception
+
+            Return False
+
+        End Try
+
+        Return True
+
+    End Function
+
+    Public Function Endereco_ObterPorId(id As Integer) As Endereco
+        Dim endereco As New Endereco()
+
         Using conn As New SQLiteConnection(connectionString)
             conn.Open()
-            Dim cmd As New SQLiteCommand("DELETE FROM endereco WHERE id = @id", conn)
+            Dim cmd As New SQLiteCommand("SELECT * FROM endereco WHERE id = @id", conn)
             cmd.Parameters.AddWithValue("@id", id)
-            cmd.ExecuteNonQuery()
+
+            Using reader As SQLiteDataReader = cmd.ExecuteReader()
+                If reader.Read() Then
+                    endereco.Id = Convert.ToInt32(reader("id"))
+                    endereco.CEP = reader("cep").ToString()
+                    endereco.Logradouro = reader("logradouro").ToString()
+                    endereco.Numero = reader("numero").ToString()
+                    endereco.Bairro = reader("bairro").ToString()
+                    endereco.Cidade = reader("cidade").ToString()
+                    endereco.Estado = reader("estado").ToString()
+                    endereco.Local = reader("local").ToString()
+                    endereco.Status = reader("status").ToString()
+                Else
+                    Return Nothing
+                End If
+            End Using
         End Using
-    End Sub
+
+        Return endereco
+    End Function
+
+    Public Function Endereco_ObterIdPorLocal(local As String) As Integer
+        Try
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Using cmd As New SQLiteCommand("SELECT id FROM endereco WHERE local = @local LIMIT 1", conn)
+                    cmd.Parameters.AddWithValue("@local", local)
+
+                    Dim result = cmd.ExecuteScalar()
+
+                    If result IsNot Nothing AndAlso Not Convert.IsDBNull(result) Then
+                        Return Convert.ToInt32(result)
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            ' Logar erro se necessário
+        End Try
+
+        Return -1
+    End Function
+
+
+
+    Public Function Endereco_Atualizar(endereco As Endereco) As Boolean
+
+        Try
+
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("UPDATE endereco SET cep = @cep, logradouro = @log, numero = @num, bairro = @bairro, cidade = @cidade, estado = @estado, local = @local, status = @status WHERE id = @id", conn)
+                cmd.Parameters.AddWithValue("@id", endereco.Id)
+                cmd.Parameters.AddWithValue("@cep", endereco.CEP)
+                cmd.Parameters.AddWithValue("@log", endereco.Logradouro)
+                cmd.Parameters.AddWithValue("@num", endereco.Numero)
+                cmd.Parameters.AddWithValue("@bairro", endereco.Bairro)
+                cmd.Parameters.AddWithValue("@cidade", endereco.Cidade)
+                cmd.Parameters.AddWithValue("@estado", endereco.Estado)
+                cmd.Parameters.AddWithValue("@local", endereco.Local)
+                cmd.Parameters.AddWithValue("@status", endereco.Status)
+                cmd.ExecuteNonQuery()
+            End Using
+
+        Catch ex As Exception
+
+            Return False
+
+        End Try
+
+        Return True
+
+    End Function
+
+    Public Function Endereco_Excluir(id As Integer) As Boolean
+
+        Try
+
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("DELETE FROM endereco WHERE id = @id", conn)
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.ExecuteNonQuery()
+            End Using
+
+        Catch ex As Exception
+
+            Return False
+
+        End Try
+
+        Return True
+
+    End Function
 
     Public Function Endereco_ListarTodos() As DataTable
         Dim dt As New DataTable
@@ -271,43 +358,87 @@ Module Md_SQLite_Funcoes
     '******************************************************************************************************************
     ' Funções de manipulação de dados para a tabela Clinica Autorizada
 
-    Public Sub ClinicaAutorizada_Adicionar(clinicaAutorizada As ClinicaAutorizada)
-        Using conn As New SQLiteConnection(connectionString)
-            conn.Open()
-            Dim cmd As New SQLiteCommand("INSERT INTO clinica_autorizada (nome_clinica, id_endereco, telefone_atendimento, fixo_atendimento, email_atendimento, status) VALUES (@nome, @idEnd, @tel, @fixo, @email, @status)", conn)
-            cmd.Parameters.AddWithValue("@nome", clinicaAutorizada.NomeClinica)
-            cmd.Parameters.AddWithValue("@idEnd", clinicaAutorizada.IdEndereco)
-            cmd.Parameters.AddWithValue("@tel", clinicaAutorizada.TelefoneAtendimento)
-            cmd.Parameters.AddWithValue("@fixo", clinicaAutorizada.FixoAtendimento)
-            cmd.Parameters.AddWithValue("@email", clinicaAutorizada.EmailAtendimento)
-            cmd.Parameters.AddWithValue("@status", clinicaAutorizada.Status)
-            cmd.ExecuteNonQuery()
-        End Using
-    End Sub
+    Public Function ClinicaAutorizada_Adicionar(clinicaAutorizada As ClinicaAutorizada) As Boolean
+        Try
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("
+                INSERT INTO clinica_autorizada 
+                (razao_social, nome_atendente, id_endereco, telefone_atendimento, fixo_atendimento, email_atendimento, status) 
+                VALUES 
+                (@razao, @nome, @idEnd, @tel, @fixo, @email, @status)", conn)
 
-    Public Sub ClinicaAutorizada_Atualizar(clinicaAutorizada As ClinicaAutorizada)
-        Using conn As New SQLiteConnection(connectionString)
-            conn.Open()
-            Dim cmd As New SQLiteCommand("UPDATE clinica_autorizada SET nome_clinica = @nome, id_endereco = @idEnd, telefone_atendimento = @tel, fixo_atendimento = @fixo, email_atendimento = @email, status = @status WHERE id = @id", conn)
-            cmd.Parameters.AddWithValue("@id", clinicaAutorizada.Id)
-            cmd.Parameters.AddWithValue("@nome", clinicaAutorizada.NomeClinica)
-            cmd.Parameters.AddWithValue("@idEnd", clinicaAutorizada.IdEndereco)
-            cmd.Parameters.AddWithValue("@tel", clinicaAutorizada.TelefoneAtendimento)
-            cmd.Parameters.AddWithValue("@fixo", clinicaAutorizada.FixoAtendimento)
-            cmd.Parameters.AddWithValue("@email", clinicaAutorizada.EmailAtendimento)
-            cmd.Parameters.AddWithValue("@status", clinicaAutorizada.Status)
-            cmd.ExecuteNonQuery()
-        End Using
-    End Sub
+                cmd.Parameters.AddWithValue("@razao", clinicaAutorizada.RazaoSocial)
+                cmd.Parameters.AddWithValue("@nome", clinicaAutorizada.NomeAtendente)
+                cmd.Parameters.AddWithValue("@idEnd", clinicaAutorizada.IdEndereco)
+                cmd.Parameters.AddWithValue("@tel", clinicaAutorizada.TelefoneAtendimento)
+                cmd.Parameters.AddWithValue("@fixo", clinicaAutorizada.FixoAtendimento)
+                cmd.Parameters.AddWithValue("@email", clinicaAutorizada.EmailAtendimento)
+                cmd.Parameters.AddWithValue("@status", clinicaAutorizada.Status)
 
-    Public Sub ClinicaAutorizada_Excluir(id As Integer)
-        Using conn As New SQLiteConnection(connectionString)
-            conn.Open()
-            Dim cmd As New SQLiteCommand("DELETE FROM clinica_autorizada WHERE id = @id", conn)
-            cmd.Parameters.AddWithValue("@id", id)
-            cmd.ExecuteNonQuery()
-        End Using
-    End Sub
+                cmd.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            Return False
+        End Try
+        Return True
+    End Function
+
+
+    Public Function ClinicaAutorizada_Atualizar(clinicaAutorizada As ClinicaAutorizada) As Boolean
+        Try
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("
+                UPDATE clinica_autorizada 
+                SET 
+                    razao_social = @razao, 
+                    nome_atendente = @nome,
+                    id_endereco = @idEnd, 
+                    telefone_atendimento = @tel, 
+                    fixo_atendimento = @fixo, 
+                    email_atendimento = @email, 
+                    status = @status 
+                WHERE id = @id", conn)
+
+                cmd.Parameters.AddWithValue("@id", clinicaAutorizada.Id)
+                cmd.Parameters.AddWithValue("@razao", clinicaAutorizada.RazaoSocial)
+                cmd.Parameters.AddWithValue("@nome", clinicaAutorizada.NomeAtendente)
+                cmd.Parameters.AddWithValue("@idEnd", clinicaAutorizada.IdEndereco)
+                cmd.Parameters.AddWithValue("@tel", clinicaAutorizada.TelefoneAtendimento)
+                cmd.Parameters.AddWithValue("@fixo", clinicaAutorizada.FixoAtendimento)
+                cmd.Parameters.AddWithValue("@email", clinicaAutorizada.EmailAtendimento)
+                cmd.Parameters.AddWithValue("@status", clinicaAutorizada.Status)
+
+                cmd.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            Return False
+        End Try
+        Return True
+    End Function
+
+
+    Public Function ClinicaAutorizada_Excluir(id As Integer) As Boolean
+
+        Try
+
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Dim cmd As New SQLiteCommand("DELETE FROM clinica_autorizada WHERE id = @id", conn)
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.ExecuteNonQuery()
+            End Using
+
+        Catch ex As Exception
+
+            Return False
+
+        End Try
+
+        Return True
+
+    End Function
 
     Public Function ClinicaAutorizada_ListarTodos() As DataTable
         Dim dt As New DataTable

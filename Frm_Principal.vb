@@ -91,6 +91,11 @@ Public Class Frm_Principal
 
     Private Sub TlStrpMnItm_UnidadesSenac_Adicionar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_UnidadesSenac_Adicionar.Click
 
+        Dim Frm As New Frm_Cadastro_ClinicaAutorizada
+        Frm.AtivarModoFormulario(Modo_Cadastro)
+        Frm.Informar_ClinicaAutorizada()
+        Frm.ShowDialog()
+
     End Sub
 
     Private Sub TlStrpMnItm_UnidadesSenac_Editar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_UnidadesSenac_Editar.Click

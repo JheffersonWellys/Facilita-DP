@@ -1,4 +1,7 @@
-﻿Imports Facilita_DP___Módulo_Rescisão.Tabelas
+﻿Imports System.IO
+Imports System.Net
+Imports Facilita_DP___Módulo_Rescisão.Tabelas
+Imports Newtonsoft.Json.Linq
 
 Module Md_Funcoes_Auxiliares
 
@@ -55,9 +58,26 @@ Module Md_Funcoes_Auxiliares
     End Function
 
     Public Sub AlterarnomeFormulario(Frm As Form, NomeFormalario As String, ModoStatus As String)
-
         Frm.Text = NomeFormalario & " | Modo " & ModoStatus
-
     End Sub
+
+    Public Function ObterEnderecoPorCEP(cep As String) As JObject
+        Try
+            Dim url As String = $"https://viacep.com.br/ws/{cep}/json/"
+            Dim request As HttpWebRequest = DirectCast(WebRequest.Create(url), HttpWebRequest)
+            request.Method = "GET"
+
+            Using response As HttpWebResponse = DirectCast(request.GetResponse(), HttpWebResponse)
+                Using reader As New StreamReader(response.GetResponseStream())
+                    Dim json As String = reader.ReadToEnd()
+                    Return JObject.Parse(json)
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Erro ao buscar o endereço: " & ex.Message, "Erro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return Nothing
+        End Try
+    End Function
 
 End Module

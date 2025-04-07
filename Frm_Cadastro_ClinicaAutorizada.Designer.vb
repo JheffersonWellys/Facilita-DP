@@ -31,30 +31,30 @@ Partial Class Frm_Cadastro_ClinicaAutorizada
         Me.Pnl_Dados_ClinicaAutorizada = New System.Windows.Forms.Panel()
         Me.TbCntrl_Dados_ClinicaAutorizada = New System.Windows.Forms.TabControl()
         Me.TbPg_Informacoes_ClinicaAutorizada = New System.Windows.Forms.TabPage()
-        Me.Lbl_RazaoSocial = New System.Windows.Forms.Label()
-        Me.TxtBx_RazaoSocial = New System.Windows.Forms.TextBox()
-        Me.TxtBx_NomeAtendente = New System.Windows.Forms.TextBox()
-        Me.Lbl_NomeAtendente = New System.Windows.Forms.Label()
-        Me.TxtBx_EmailAtendimento = New System.Windows.Forms.TextBox()
-        Me.Lbl_EmailAtendimento = New System.Windows.Forms.Label()
-        Me.MskdTxtBx_Telefone = New System.Windows.Forms.MaskedTextBox()
-        Me.Lbl_Telefone = New System.Windows.Forms.Label()
         Me.MskdTxtBx_Fixo = New System.Windows.Forms.MaskedTextBox()
         Me.Lbl_Fixo = New System.Windows.Forms.Label()
+        Me.MskdTxtBx_Telefone = New System.Windows.Forms.MaskedTextBox()
+        Me.Lbl_Telefone = New System.Windows.Forms.Label()
+        Me.TxtBx_EmailAtendimento = New System.Windows.Forms.TextBox()
+        Me.Lbl_EmailAtendimento = New System.Windows.Forms.Label()
+        Me.TxtBx_NomeAtendente = New System.Windows.Forms.TextBox()
+        Me.Lbl_NomeAtendente = New System.Windows.Forms.Label()
+        Me.TxtBx_RazaoSocial = New System.Windows.Forms.TextBox()
+        Me.Lbl_RazaoSocial = New System.Windows.Forms.Label()
         Me.TbPg_Informacoes_Endereco = New System.Windows.Forms.TabPage()
-        Me.MskdTxtBx_CEP = New System.Windows.Forms.MaskedTextBox()
-        Me.Lbl_CEP = New System.Windows.Forms.Label()
-        Me.Bttn_Pesquisar = New System.Windows.Forms.Button()
-        Me.TxtBx_Endereco_Logradouro = New System.Windows.Forms.TextBox()
-        Me.Lbl_Logradouro = New System.Windows.Forms.Label()
-        Me.Lbl_Numero = New System.Windows.Forms.Label()
-        Me.TxtBx_Endereco_Numero = New System.Windows.Forms.TextBox()
-        Me.TxtBx_Endereco_Bairro = New System.Windows.Forms.TextBox()
-        Me.Lbl_Bairro = New System.Windows.Forms.Label()
+        Me.TxtBx_Endereco_Estado = New System.Windows.Forms.TextBox()
+        Me.Lbl_Estado = New System.Windows.Forms.Label()
         Me.TxtBx_Endereco_Cidade = New System.Windows.Forms.TextBox()
         Me.Lbl_Cidade = New System.Windows.Forms.Label()
-        Me.Lbl_Estado = New System.Windows.Forms.Label()
-        Me.TxtBx_Endereco_Estado = New System.Windows.Forms.TextBox()
+        Me.TxtBx_Endereco_Bairro = New System.Windows.Forms.TextBox()
+        Me.Lbl_Bairro = New System.Windows.Forms.Label()
+        Me.TxtBx_Endereco_Numero = New System.Windows.Forms.TextBox()
+        Me.Lbl_Numero = New System.Windows.Forms.Label()
+        Me.TxtBx_Endereco_Logradouro = New System.Windows.Forms.TextBox()
+        Me.Lbl_Logradouro = New System.Windows.Forms.Label()
+        Me.Bttn_Pesquisar = New System.Windows.Forms.Button()
+        Me.MskdTxtBx_CEP = New System.Windows.Forms.MaskedTextBox()
+        Me.Lbl_CEP = New System.Windows.Forms.Label()
         Me.Pnl_BotoesAcao.SuspendLayout()
         Me.Pnl_Dados_ClinicaAutorizada.SuspendLayout()
         Me.TbCntrl_Dados_ClinicaAutorizada.SuspendLayout()
@@ -157,56 +157,23 @@ Partial Class Frm_Cadastro_ClinicaAutorizada
         Me.TbPg_Informacoes_ClinicaAutorizada.Text = "Informações Clínica Autorizada"
         Me.TbPg_Informacoes_ClinicaAutorizada.UseVisualStyleBackColor = True
         '
-        'Lbl_RazaoSocial
+        'MskdTxtBx_Fixo
         '
-        Me.Lbl_RazaoSocial.AutoSize = True
-        Me.Lbl_RazaoSocial.Location = New System.Drawing.Point(8, 10)
-        Me.Lbl_RazaoSocial.Name = "Lbl_RazaoSocial"
-        Me.Lbl_RazaoSocial.Size = New System.Drawing.Size(70, 13)
-        Me.Lbl_RazaoSocial.TabIndex = 0
-        Me.Lbl_RazaoSocial.Text = "Razão Social"
+        Me.MskdTxtBx_Fixo.Location = New System.Drawing.Point(138, 143)
+        Me.MskdTxtBx_Fixo.Mask = "(##) ####-####"
+        Me.MskdTxtBx_Fixo.Name = "MskdTxtBx_Fixo"
+        Me.MskdTxtBx_Fixo.Size = New System.Drawing.Size(121, 20)
+        Me.MskdTxtBx_Fixo.TabIndex = 14
+        Me.MskdTxtBx_Fixo.Tag = "Fixo"
         '
-        'TxtBx_RazaoSocial
+        'Lbl_Fixo
         '
-        Me.TxtBx_RazaoSocial.Location = New System.Drawing.Point(11, 26)
-        Me.TxtBx_RazaoSocial.Name = "TxtBx_RazaoSocial"
-        Me.TxtBx_RazaoSocial.Size = New System.Drawing.Size(375, 20)
-        Me.TxtBx_RazaoSocial.TabIndex = 1
-        Me.TxtBx_RazaoSocial.Tag = "Razão Social"
-        '
-        'TxtBx_NomeAtendente
-        '
-        Me.TxtBx_NomeAtendente.Location = New System.Drawing.Point(11, 65)
-        Me.TxtBx_NomeAtendente.Name = "TxtBx_NomeAtendente"
-        Me.TxtBx_NomeAtendente.Size = New System.Drawing.Size(375, 20)
-        Me.TxtBx_NomeAtendente.TabIndex = 3
-        Me.TxtBx_NomeAtendente.Tag = "Nome Atendente"
-        '
-        'Lbl_NomeAtendente
-        '
-        Me.Lbl_NomeAtendente.AutoSize = True
-        Me.Lbl_NomeAtendente.Location = New System.Drawing.Point(8, 49)
-        Me.Lbl_NomeAtendente.Name = "Lbl_NomeAtendente"
-        Me.Lbl_NomeAtendente.Size = New System.Drawing.Size(87, 13)
-        Me.Lbl_NomeAtendente.TabIndex = 2
-        Me.Lbl_NomeAtendente.Text = "Nome Atendente"
-        '
-        'TxtBx_EmailAtendimento
-        '
-        Me.TxtBx_EmailAtendimento.Location = New System.Drawing.Point(11, 104)
-        Me.TxtBx_EmailAtendimento.Name = "TxtBx_EmailAtendimento"
-        Me.TxtBx_EmailAtendimento.Size = New System.Drawing.Size(375, 20)
-        Me.TxtBx_EmailAtendimento.TabIndex = 5
-        Me.TxtBx_EmailAtendimento.Tag = "E-mail Atendimento"
-        '
-        'Lbl_EmailAtendimento
-        '
-        Me.Lbl_EmailAtendimento.AutoSize = True
-        Me.Lbl_EmailAtendimento.Location = New System.Drawing.Point(8, 88)
-        Me.Lbl_EmailAtendimento.Name = "Lbl_EmailAtendimento"
-        Me.Lbl_EmailAtendimento.Size = New System.Drawing.Size(97, 13)
-        Me.Lbl_EmailAtendimento.TabIndex = 4
-        Me.Lbl_EmailAtendimento.Text = "E-mail Atendimento"
+        Me.Lbl_Fixo.AutoSize = True
+        Me.Lbl_Fixo.Location = New System.Drawing.Point(135, 127)
+        Me.Lbl_Fixo.Name = "Lbl_Fixo"
+        Me.Lbl_Fixo.Size = New System.Drawing.Size(26, 13)
+        Me.Lbl_Fixo.TabIndex = 13
+        Me.Lbl_Fixo.Text = "Fixo"
         '
         'MskdTxtBx_Telefone
         '
@@ -226,23 +193,58 @@ Partial Class Frm_Cadastro_ClinicaAutorizada
         Me.Lbl_Telefone.TabIndex = 11
         Me.Lbl_Telefone.Text = "Telefone"
         '
-        'MskdTxtBx_Fixo
+        'TxtBx_EmailAtendimento
         '
-        Me.MskdTxtBx_Fixo.Location = New System.Drawing.Point(138, 143)
-        Me.MskdTxtBx_Fixo.Mask = "(##) ####-####"
-        Me.MskdTxtBx_Fixo.Name = "MskdTxtBx_Fixo"
-        Me.MskdTxtBx_Fixo.Size = New System.Drawing.Size(121, 20)
-        Me.MskdTxtBx_Fixo.TabIndex = 14
-        Me.MskdTxtBx_Fixo.Tag = "Fixo"
+        Me.TxtBx_EmailAtendimento.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
+        Me.TxtBx_EmailAtendimento.Location = New System.Drawing.Point(11, 104)
+        Me.TxtBx_EmailAtendimento.Name = "TxtBx_EmailAtendimento"
+        Me.TxtBx_EmailAtendimento.Size = New System.Drawing.Size(375, 20)
+        Me.TxtBx_EmailAtendimento.TabIndex = 5
+        Me.TxtBx_EmailAtendimento.Tag = "E-mail Atendimento"
         '
-        'Lbl_Fixo
+        'Lbl_EmailAtendimento
         '
-        Me.Lbl_Fixo.AutoSize = True
-        Me.Lbl_Fixo.Location = New System.Drawing.Point(135, 127)
-        Me.Lbl_Fixo.Name = "Lbl_Fixo"
-        Me.Lbl_Fixo.Size = New System.Drawing.Size(26, 13)
-        Me.Lbl_Fixo.TabIndex = 13
-        Me.Lbl_Fixo.Text = "Fixo"
+        Me.Lbl_EmailAtendimento.AutoSize = True
+        Me.Lbl_EmailAtendimento.Location = New System.Drawing.Point(8, 88)
+        Me.Lbl_EmailAtendimento.Name = "Lbl_EmailAtendimento"
+        Me.Lbl_EmailAtendimento.Size = New System.Drawing.Size(97, 13)
+        Me.Lbl_EmailAtendimento.TabIndex = 4
+        Me.Lbl_EmailAtendimento.Text = "E-mail Atendimento"
+        '
+        'TxtBx_NomeAtendente
+        '
+        Me.TxtBx_NomeAtendente.Location = New System.Drawing.Point(11, 65)
+        Me.TxtBx_NomeAtendente.Name = "TxtBx_NomeAtendente"
+        Me.TxtBx_NomeAtendente.Size = New System.Drawing.Size(375, 20)
+        Me.TxtBx_NomeAtendente.TabIndex = 3
+        Me.TxtBx_NomeAtendente.Tag = "Nome Atendente"
+        '
+        'Lbl_NomeAtendente
+        '
+        Me.Lbl_NomeAtendente.AutoSize = True
+        Me.Lbl_NomeAtendente.Location = New System.Drawing.Point(8, 49)
+        Me.Lbl_NomeAtendente.Name = "Lbl_NomeAtendente"
+        Me.Lbl_NomeAtendente.Size = New System.Drawing.Size(87, 13)
+        Me.Lbl_NomeAtendente.TabIndex = 2
+        Me.Lbl_NomeAtendente.Text = "Nome Atendente"
+        '
+        'TxtBx_RazaoSocial
+        '
+        Me.TxtBx_RazaoSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtBx_RazaoSocial.Location = New System.Drawing.Point(11, 26)
+        Me.TxtBx_RazaoSocial.Name = "TxtBx_RazaoSocial"
+        Me.TxtBx_RazaoSocial.Size = New System.Drawing.Size(375, 20)
+        Me.TxtBx_RazaoSocial.TabIndex = 1
+        Me.TxtBx_RazaoSocial.Tag = "Razão Social"
+        '
+        'Lbl_RazaoSocial
+        '
+        Me.Lbl_RazaoSocial.AutoSize = True
+        Me.Lbl_RazaoSocial.Location = New System.Drawing.Point(8, 10)
+        Me.Lbl_RazaoSocial.Name = "Lbl_RazaoSocial"
+        Me.Lbl_RazaoSocial.Size = New System.Drawing.Size(70, 13)
+        Me.Lbl_RazaoSocial.TabIndex = 0
+        Me.Lbl_RazaoSocial.Text = "Razão Social"
         '
         'TbPg_Informacoes_Endereco
         '
@@ -267,85 +269,23 @@ Partial Class Frm_Cadastro_ClinicaAutorizada
         Me.TbPg_Informacoes_Endereco.Text = "Informações Endereço"
         Me.TbPg_Informacoes_Endereco.UseVisualStyleBackColor = True
         '
-        'MskdTxtBx_CEP
+        'TxtBx_Endereco_Estado
         '
-        Me.MskdTxtBx_CEP.Location = New System.Drawing.Point(11, 26)
-        Me.MskdTxtBx_CEP.Mask = "#####-###"
-        Me.MskdTxtBx_CEP.Name = "MskdTxtBx_CEP"
-        Me.MskdTxtBx_CEP.Size = New System.Drawing.Size(121, 20)
-        Me.MskdTxtBx_CEP.TabIndex = 14
-        Me.MskdTxtBx_CEP.Tag = "CEP"
+        Me.TxtBx_Endereco_Estado.Enabled = False
+        Me.TxtBx_Endereco_Estado.Location = New System.Drawing.Point(268, 143)
+        Me.TxtBx_Endereco_Estado.Name = "TxtBx_Endereco_Estado"
+        Me.TxtBx_Endereco_Estado.Size = New System.Drawing.Size(120, 20)
+        Me.TxtBx_Endereco_Estado.TabIndex = 25
+        Me.TxtBx_Endereco_Estado.Tag = "Estado"
         '
-        'Lbl_CEP
+        'Lbl_Estado
         '
-        Me.Lbl_CEP.AutoSize = True
-        Me.Lbl_CEP.Location = New System.Drawing.Point(8, 10)
-        Me.Lbl_CEP.Name = "Lbl_CEP"
-        Me.Lbl_CEP.Size = New System.Drawing.Size(28, 13)
-        Me.Lbl_CEP.TabIndex = 13
-        Me.Lbl_CEP.Text = "CEP"
-        '
-        'Bttn_Pesquisar
-        '
-        Me.Bttn_Pesquisar.Location = New System.Drawing.Point(138, 13)
-        Me.Bttn_Pesquisar.Name = "Bttn_Pesquisar"
-        Me.Bttn_Pesquisar.Size = New System.Drawing.Size(100, 35)
-        Me.Bttn_Pesquisar.TabIndex = 15
-        Me.Bttn_Pesquisar.Text = "Pesquisar"
-        Me.Bttn_Pesquisar.UseVisualStyleBackColor = True
-        '
-        'TxtBx_Endereco_Logradouro
-        '
-        Me.TxtBx_Endereco_Logradouro.Enabled = False
-        Me.TxtBx_Endereco_Logradouro.Location = New System.Drawing.Point(11, 65)
-        Me.TxtBx_Endereco_Logradouro.Name = "TxtBx_Endereco_Logradouro"
-        Me.TxtBx_Endereco_Logradouro.Size = New System.Drawing.Size(251, 20)
-        Me.TxtBx_Endereco_Logradouro.TabIndex = 17
-        Me.TxtBx_Endereco_Logradouro.Tag = "Logradouro"
-        '
-        'Lbl_Logradouro
-        '
-        Me.Lbl_Logradouro.AutoSize = True
-        Me.Lbl_Logradouro.Location = New System.Drawing.Point(8, 49)
-        Me.Lbl_Logradouro.Name = "Lbl_Logradouro"
-        Me.Lbl_Logradouro.Size = New System.Drawing.Size(61, 13)
-        Me.Lbl_Logradouro.TabIndex = 16
-        Me.Lbl_Logradouro.Text = "Logradouro"
-        '
-        'Lbl_Numero
-        '
-        Me.Lbl_Numero.AutoSize = True
-        Me.Lbl_Numero.Location = New System.Drawing.Point(262, 49)
-        Me.Lbl_Numero.Name = "Lbl_Numero"
-        Me.Lbl_Numero.Size = New System.Drawing.Size(44, 13)
-        Me.Lbl_Numero.TabIndex = 18
-        Me.Lbl_Numero.Text = "Número"
-        '
-        'TxtBx_Endereco_Numero
-        '
-        Me.TxtBx_Endereco_Numero.Location = New System.Drawing.Point(268, 65)
-        Me.TxtBx_Endereco_Numero.Name = "TxtBx_Endereco_Numero"
-        Me.TxtBx_Endereco_Numero.Size = New System.Drawing.Size(120, 20)
-        Me.TxtBx_Endereco_Numero.TabIndex = 19
-        Me.TxtBx_Endereco_Numero.Tag = "Número"
-        '
-        'TxtBx_Endereco_Bairro
-        '
-        Me.TxtBx_Endereco_Bairro.Enabled = False
-        Me.TxtBx_Endereco_Bairro.Location = New System.Drawing.Point(13, 104)
-        Me.TxtBx_Endereco_Bairro.Name = "TxtBx_Endereco_Bairro"
-        Me.TxtBx_Endereco_Bairro.Size = New System.Drawing.Size(375, 20)
-        Me.TxtBx_Endereco_Bairro.TabIndex = 21
-        Me.TxtBx_Endereco_Bairro.Tag = "Bairro"
-        '
-        'Lbl_Bairro
-        '
-        Me.Lbl_Bairro.AutoSize = True
-        Me.Lbl_Bairro.Location = New System.Drawing.Point(10, 88)
-        Me.Lbl_Bairro.Name = "Lbl_Bairro"
-        Me.Lbl_Bairro.Size = New System.Drawing.Size(34, 13)
-        Me.Lbl_Bairro.TabIndex = 20
-        Me.Lbl_Bairro.Text = "Bairro"
+        Me.Lbl_Estado.AutoSize = True
+        Me.Lbl_Estado.Location = New System.Drawing.Point(266, 127)
+        Me.Lbl_Estado.Name = "Lbl_Estado"
+        Me.Lbl_Estado.Size = New System.Drawing.Size(40, 13)
+        Me.Lbl_Estado.TabIndex = 24
+        Me.Lbl_Estado.Text = "Estado"
         '
         'TxtBx_Endereco_Cidade
         '
@@ -365,23 +305,85 @@ Partial Class Frm_Cadastro_ClinicaAutorizada
         Me.Lbl_Cidade.TabIndex = 22
         Me.Lbl_Cidade.Text = "Cidade"
         '
-        'Lbl_Estado
+        'TxtBx_Endereco_Bairro
         '
-        Me.Lbl_Estado.AutoSize = True
-        Me.Lbl_Estado.Location = New System.Drawing.Point(266, 127)
-        Me.Lbl_Estado.Name = "Lbl_Estado"
-        Me.Lbl_Estado.Size = New System.Drawing.Size(40, 13)
-        Me.Lbl_Estado.TabIndex = 24
-        Me.Lbl_Estado.Text = "Estado"
+        Me.TxtBx_Endereco_Bairro.Enabled = False
+        Me.TxtBx_Endereco_Bairro.Location = New System.Drawing.Point(13, 104)
+        Me.TxtBx_Endereco_Bairro.Name = "TxtBx_Endereco_Bairro"
+        Me.TxtBx_Endereco_Bairro.Size = New System.Drawing.Size(375, 20)
+        Me.TxtBx_Endereco_Bairro.TabIndex = 21
+        Me.TxtBx_Endereco_Bairro.Tag = "Bairro"
         '
-        'TxtBx_Endereco_Estado
+        'Lbl_Bairro
         '
-        Me.TxtBx_Endereco_Estado.Enabled = False
-        Me.TxtBx_Endereco_Estado.Location = New System.Drawing.Point(268, 143)
-        Me.TxtBx_Endereco_Estado.Name = "TxtBx_Endereco_Estado"
-        Me.TxtBx_Endereco_Estado.Size = New System.Drawing.Size(120, 20)
-        Me.TxtBx_Endereco_Estado.TabIndex = 25
-        Me.TxtBx_Endereco_Estado.Tag = "Estado"
+        Me.Lbl_Bairro.AutoSize = True
+        Me.Lbl_Bairro.Location = New System.Drawing.Point(10, 88)
+        Me.Lbl_Bairro.Name = "Lbl_Bairro"
+        Me.Lbl_Bairro.Size = New System.Drawing.Size(34, 13)
+        Me.Lbl_Bairro.TabIndex = 20
+        Me.Lbl_Bairro.Text = "Bairro"
+        '
+        'TxtBx_Endereco_Numero
+        '
+        Me.TxtBx_Endereco_Numero.Location = New System.Drawing.Point(268, 65)
+        Me.TxtBx_Endereco_Numero.Name = "TxtBx_Endereco_Numero"
+        Me.TxtBx_Endereco_Numero.Size = New System.Drawing.Size(120, 20)
+        Me.TxtBx_Endereco_Numero.TabIndex = 19
+        Me.TxtBx_Endereco_Numero.Tag = "Número"
+        '
+        'Lbl_Numero
+        '
+        Me.Lbl_Numero.AutoSize = True
+        Me.Lbl_Numero.Location = New System.Drawing.Point(262, 49)
+        Me.Lbl_Numero.Name = "Lbl_Numero"
+        Me.Lbl_Numero.Size = New System.Drawing.Size(44, 13)
+        Me.Lbl_Numero.TabIndex = 18
+        Me.Lbl_Numero.Text = "Número"
+        '
+        'TxtBx_Endereco_Logradouro
+        '
+        Me.TxtBx_Endereco_Logradouro.Enabled = False
+        Me.TxtBx_Endereco_Logradouro.Location = New System.Drawing.Point(11, 65)
+        Me.TxtBx_Endereco_Logradouro.Name = "TxtBx_Endereco_Logradouro"
+        Me.TxtBx_Endereco_Logradouro.Size = New System.Drawing.Size(251, 20)
+        Me.TxtBx_Endereco_Logradouro.TabIndex = 17
+        Me.TxtBx_Endereco_Logradouro.Tag = "Logradouro"
+        '
+        'Lbl_Logradouro
+        '
+        Me.Lbl_Logradouro.AutoSize = True
+        Me.Lbl_Logradouro.Location = New System.Drawing.Point(8, 49)
+        Me.Lbl_Logradouro.Name = "Lbl_Logradouro"
+        Me.Lbl_Logradouro.Size = New System.Drawing.Size(61, 13)
+        Me.Lbl_Logradouro.TabIndex = 16
+        Me.Lbl_Logradouro.Text = "Logradouro"
+        '
+        'Bttn_Pesquisar
+        '
+        Me.Bttn_Pesquisar.Location = New System.Drawing.Point(138, 13)
+        Me.Bttn_Pesquisar.Name = "Bttn_Pesquisar"
+        Me.Bttn_Pesquisar.Size = New System.Drawing.Size(100, 35)
+        Me.Bttn_Pesquisar.TabIndex = 15
+        Me.Bttn_Pesquisar.Text = "Pesquisar"
+        Me.Bttn_Pesquisar.UseVisualStyleBackColor = True
+        '
+        'MskdTxtBx_CEP
+        '
+        Me.MskdTxtBx_CEP.Location = New System.Drawing.Point(11, 26)
+        Me.MskdTxtBx_CEP.Mask = "#####-###"
+        Me.MskdTxtBx_CEP.Name = "MskdTxtBx_CEP"
+        Me.MskdTxtBx_CEP.Size = New System.Drawing.Size(121, 20)
+        Me.MskdTxtBx_CEP.TabIndex = 14
+        Me.MskdTxtBx_CEP.Tag = "CEP"
+        '
+        'Lbl_CEP
+        '
+        Me.Lbl_CEP.AutoSize = True
+        Me.Lbl_CEP.Location = New System.Drawing.Point(8, 10)
+        Me.Lbl_CEP.Name = "Lbl_CEP"
+        Me.Lbl_CEP.Size = New System.Drawing.Size(28, 13)
+        Me.Lbl_CEP.TabIndex = 13
+        Me.Lbl_CEP.Text = "CEP"
         '
         'Frm_Cadastro_ClinicaAutorizada
         '
