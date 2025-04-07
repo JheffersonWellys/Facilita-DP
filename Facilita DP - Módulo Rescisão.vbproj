@@ -82,10 +82,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clss_Tabelas.vb" />
-    <Compile Include="Frm_Cadastro_Clinicas.Designer.vb">
-      <DependentUpon>Frm_Cadastro_Clinicas.vb</DependentUpon>
+    <Compile Include="Frm_Cadastro_ClinicaAutorizada.Designer.vb">
+      <DependentUpon>Frm_Cadastro_ClinicaAutorizada.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Cadastro_Clinicas.vb" />
+    <Compile Include="Frm_Cadastro_ClinicaAutorizada.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Cadastro_Colaborador.Designer.vb">
       <DependentUpon>Frm_Cadastro_Colaborador.vb</DependentUpon>
     </Compile>
@@ -133,8 +135,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Frm_Cadastro_Clinicas.resx">
-      <DependentUpon>Frm_Cadastro_Clinicas.vb</DependentUpon>
+    <EmbeddedResource Include="Frm_Cadastro_ClinicaAutorizada.resx">
+      <DependentUpon>Frm_Cadastro_ClinicaAutorizada.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Cadastro_Colaborador.resx">
       <DependentUpon>Frm_Cadastro_Colaborador.vb</DependentUpon>
