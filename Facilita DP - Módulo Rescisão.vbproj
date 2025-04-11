@@ -156,6 +156,9 @@
     <EmbeddedResource Include="Frm_Principal.resx">
       <DependentUpon>Frm_Principal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Selecionar_ClinicaAutorizada.resx">
+      <DependentUpon>Frm_Selecionar_ClinicaAutorizada.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Selecionar_Colaborador.resx">
       <DependentUpon>Frm_Selecionar_Colaborador.vb</DependentUpon>
     </EmbeddedResource>
