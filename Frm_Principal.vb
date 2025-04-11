@@ -91,11 +91,6 @@ Public Class Frm_Principal
 
     Private Sub TlStrpMnItm_UnidadesSenac_Adicionar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_UnidadesSenac_Adicionar.Click
 
-        Dim Frm As New Frm_Cadastro_ClinicaAutorizada
-        Frm.AtivarModoFormulario(Modo_Cadastro)
-        Frm.Informar_ClinicaAutorizada()
-        Frm.ShowDialog()
-
     End Sub
 
     Private Sub TlStrpMnItm_UnidadesSenac_Editar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_UnidadesSenac_Editar.Click
@@ -112,17 +107,49 @@ Public Class Frm_Principal
 
     Private Sub TlStrpMnItm_ClinicasAutorizadas_Adicionar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_ClinicasAutorizadas_Adicionar.Click
 
+        Dim Frm As New Frm_Cadastro_ClinicaAutorizada
+        Frm.AtivarModoFormulario(Modo_Cadastro)
+        Frm.Informar_ClinicaAutorizada()
+        Frm.ShowDialog()
+
     End Sub
 
     Private Sub TlStrpMnItm_ClinicasAutorizadas_Editar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_ClinicasAutorizadas_Editar.Click
+
+        Dim clinicaAutorizada As ClinicaAutorizada = SelecionarClinicaAutorizada()
+
+        If clinicaAutorizada Is Nothing Then Exit Sub
+
+        Dim Frm_Cadastro As New Frm_Cadastro_ClinicaAutorizada
+        Frm_Cadastro.AtivarModoFormulario(Modo_Edicao)
+        Frm_Cadastro.Informar_ClinicaAutorizada(clinicaAutorizada)
+        Frm_Cadastro.ShowDialog()
 
     End Sub
 
     Private Sub TlStrpMnItm_ClinicasAutorizadas_Excluir_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_ClinicasAutorizadas_Excluir.Click
 
+        Dim clinicaAutorizada As ClinicaAutorizada = SelecionarClinicaAutorizada()
+
+        If clinicaAutorizada Is Nothing Then Exit Sub
+
+        Dim Frm_Cadastro As New Frm_Cadastro_ClinicaAutorizada
+        Frm_Cadastro.AtivarModoFormulario(Modo_Exclusao)
+        Frm_Cadastro.Informar_ClinicaAutorizada(clinicaAutorizada)
+        Frm_Cadastro.ShowDialog()
+
     End Sub
 
     Private Sub TlStrpMnItm_ClinicasAutorizadas_Visualizar_Click(sender As Object, e As EventArgs) Handles TlStrpMnItm_ClinicasAutorizadas_Visualizar.Click
+
+        Dim clinicaAutorizada As ClinicaAutorizada = SelecionarClinicaAutorizada()
+
+        If clinicaAutorizada Is Nothing Then Exit Sub
+
+        Dim Frm_Cadastro As New Frm_Cadastro_ClinicaAutorizada
+        Frm_Cadastro.AtivarModoFormulario(Modo_Visualizacao)
+        Frm_Cadastro.Informar_ClinicaAutorizada(clinicaAutorizada)
+        Frm_Cadastro.ShowDialog()
 
     End Sub
 

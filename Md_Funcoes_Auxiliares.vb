@@ -57,6 +57,15 @@ Module Md_Funcoes_Auxiliares
         Return Nothing
     End Function
 
+    Public Function SelecionarClinicaAutorizada() As ClinicaAutorizada
+        Using frm As New Frm_Selecionar_ClinicaAutorizada
+            If frm.ShowDialog() = DialogResult.OK Then
+                Return frm.ClinicaAutorizadaSelecionada
+            End If
+        End Using
+        Return Nothing
+    End Function
+
     Public Sub AlterarnomeFormulario(Frm As Form, NomeFormalario As String, ModoStatus As String)
         Frm.Text = NomeFormalario & " | Modo " & ModoStatus
     End Sub

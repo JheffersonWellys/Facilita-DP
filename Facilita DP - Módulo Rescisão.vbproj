@@ -110,6 +110,12 @@
     <Compile Include="Frm_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_Selecionar_ClinicaAutorizada.Designer.vb">
+      <DependentUpon>Frm_Selecionar_ClinicaAutorizada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Selecionar_ClinicaAutorizada.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Selecionar_Colaborador.Designer.vb">
       <DependentUpon>Frm_Selecionar_Colaborador.vb</DependentUpon>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal.resx">
       <DependentUpon>Frm_Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Selecionar_ClinicaAutorizada.resx">
+      <DependentUpon>Frm_Selecionar_ClinicaAutorizada.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Selecionar_Colaborador.resx">
       <DependentUpon>Frm_Selecionar_Colaborador.vb</DependentUpon>
