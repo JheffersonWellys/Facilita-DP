@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_Selecionar_ClinicaAutorizada
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Frm_Selecionar_ClinicaAutorizada
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Selecionar_ClinicaAutorizada))
@@ -74,7 +74,7 @@ Partial Class Frm_Selecionar_ClinicaAutorizada
         Me.TbPg_Lista_ClinicasAutorizadas.Padding = New System.Windows.Forms.Padding(10)
         Me.TbPg_Lista_ClinicasAutorizadas.Size = New System.Drawing.Size(764, 329)
         Me.TbPg_Lista_ClinicasAutorizadas.TabIndex = 0
-        Me.TbPg_Lista_ClinicasAutorizadas.Text = "Lista de Colaboradores"
+        Me.TbPg_Lista_ClinicasAutorizadas.Text = "Lista de Clínicas Autorizadas"
         Me.TbPg_Lista_ClinicasAutorizadas.UseVisualStyleBackColor = True
         '
         'DtGrdVw_Lista_ClinicasAutorizadas

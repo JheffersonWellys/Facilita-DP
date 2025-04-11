@@ -451,6 +451,30 @@ Module Md_SQLite_Funcoes
         Return dt
     End Function
 
+    Public Function ClinicaAutorizada_ListarDadosComEndereco() As DataTable
+        Dim dt As New DataTable
+
+        Using conn As New SQLiteConnection(connectionString)
+            conn.Open()
+
+            Dim query As String = "
+                SELECT 
+                    ca.*, 
+                    e.cidade AS cidade,
+                    e.estado AS estado
+                FROM clinica_autorizada ca
+                INNER JOIN endereco e ON ca.id_endereco = e.id
+            "
+
+            Dim cmd As New SQLiteCommand(query, conn)
+            Dim da As New SQLiteDataAdapter(cmd)
+            da.Fill(dt)
+        End Using
+
+        Return dt
+    End Function
+
+
     '******************************************************************************************************************
     ' Funções de manipulação de dados para a tabela Exame Médico
 

@@ -141,6 +141,8 @@ Public Class Frm_Cadastro_ClinicaAutorizada
             .MskdTxtBx_Telefone.Enabled = Status
             .MskdTxtBx_Fixo.Enabled = Status
             .MskdTxtBx_CEP.Enabled = Status
+            .TxtBx_Endereco_Numero.Enabled = Status
+            .Bttn_Pesquisar.Enabled = Status
 
         End With
 
