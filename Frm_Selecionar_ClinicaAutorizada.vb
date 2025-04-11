@@ -1,0 +1,3 @@
+﻿Public Class Frm_Selecionar_ClinicaAutorizada
+
+End Class
